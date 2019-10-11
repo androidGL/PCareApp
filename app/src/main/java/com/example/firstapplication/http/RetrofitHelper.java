@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
  */
 
 public class RetrofitHelper {
-    private static OkHttpClient okHttpClient;
+//    private static OkHttpClient okHttpClient;
 //    private static void init(){
 //        if(null == okHttpClient){
 //            synchronized (RetrofitHelper.class){
