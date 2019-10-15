@@ -1,4 +1,4 @@
-package com.example.firstapplication.view;
+package com.example.firstapplication.activity;
 
 import com.example.firstapplication.base.BaseActivity;
 import com.example.firstapplication.resultBean.UserInfo;

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">FirstApplication</string>
+    <string name="send">发送</string>
+    <array name="list_question">
+        <item>您的年龄是多大？</item>
+        <item>咳嗽几天了？</item>
+        <item>有没有发烧？</item>
+        <item>有没有痰？</item>
+        <item>发烧多少度？</item>
+    </array>
 </resources>

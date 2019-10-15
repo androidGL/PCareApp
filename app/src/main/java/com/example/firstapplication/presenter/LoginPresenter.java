@@ -4,7 +4,7 @@ import com.example.firstapplication.base.BasePresenter;
 import com.example.firstapplication.resultBean.UserInfo;
 import com.example.firstapplication.contract.LoginContract;
 import com.example.firstapplication.model.LoginModel;
-import com.example.firstapplication.view.LoginActivity;
+import com.example.firstapplication.activity.LoginActivity;
 
 /**
  * @author gelan
