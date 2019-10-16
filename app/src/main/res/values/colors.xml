@@ -4,8 +4,13 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="MAIN_COLOR">#FFFFE0</color>
-    <color name="TEXT_COLOR">#1A1A1A</color>
+    <color name="TEXT_COLOR">#0A0A0A</color>
     <color name="head_chat">#698B22</color>
+    <color name="start_look">#FFA500</color>
+    <color name="start_listen">#BCEE68</color>
+    <color name="start_request">#FFB5C5</color>
+    <color name="start_pulse">#8C8C8C</color>
+    <color name="title_text">#CD6600</color>
     <!--<color name="head_chat">#698B22</color>-->
 
 </resources>

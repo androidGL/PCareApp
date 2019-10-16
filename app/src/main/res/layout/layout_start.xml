@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/top_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/TEXT_COLOR"
+        android:textSize="@dimen/main_text_size"
+        android:text="@string/top"
+        android:background="@color/MAIN_COLOR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/start_look"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/look"
+        android:textSize="@dimen/big_size"
+        android:textColor="@color/TEXT_COLOR"
+        android:textStyle="bold"
+        android:background="@color/start_look"
+        android:onClick="startTreat"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_text"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/start_listener"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/listener"
+        android:textColor="@color/TEXT_COLOR"
+        android:textSize="@dimen/big_size"
+        android:textStyle="bold"
+        android:background="@color/start_listen"
+        android:onClick="startTreat"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintLeft_toRightOf="@id/start_look"
+        app:layout_constraintTop_toBottomOf="@id/top_text"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/start_request"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/request"
+        android:textColor="@color/TEXT_COLOR"
+        android:textSize="@dimen/big_size"
+        android:textStyle="bold"
+        android:background="@color/start_request"
+        android:onClick="startTreat"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start_look"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/start_pulse"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/pulse"
+        android:textColor="@color/TEXT_COLOR"
+        android:textSize="@dimen/big_size"
+        android:textStyle="bold"
+        android:background="@color/start_pulse"
+        android:onClick="startTreat"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toEndOf="@id/start_request"
+        app:layout_constraintTop_toBottomOf="@id/start_listener"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/start_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:text="10s后开始为您预诊"
+        android:padding="10dp"
+        android:textSize="@dimen/small_size"
+        android:textColor="@color/TEXT_COLOR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

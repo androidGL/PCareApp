@@ -8,4 +8,15 @@
         <item>有没有痰？</item>
         <item>发烧多少度？</item>
     </array>
+    <string name="look">望</string>
+    <string name="listener">闻</string>
+    <string name="request">问</string>
+    <string name="pulse">切</string>
+    <string name="top">王二小     23岁    中医科    \n 欢迎来到PCare预诊系统，接下来我将为您进行预诊，以便专家可以更全面更准确的了解您的病症，您可店家下面任一项开始预诊，或者等待系统自动为您进行全方面预诊 </string>
+    <string name="tip_look">请将脸部显示到轮廓中</string>
+    <string name="look_tip2">请您张嘴将舌头放在下框中，感谢配合！</string>
+    <string name="look_tip_next">您已完成面部采集，接下来我将为您听诊</string>
+    <string name="tip_receive">请您将身份证放于磁卡读取处</string>
+    <string name="listener_heart">心脏</string>
+    <string name="listener_stomach">腹部</string>
 </resources>
