@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.firstapplication.R;
 import com.example.firstapplication.base.AppApplication;
+import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
 import com.pcare.threadpool.deliver.AndroidDeliver;
 
@@ -41,6 +42,11 @@ public class MajorListenerActivity extends SimpleBaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_major_listener;
+    }
+
+    @Override
+    protected IPresenter bindPresenter() {
+        return null;
     }
 
 

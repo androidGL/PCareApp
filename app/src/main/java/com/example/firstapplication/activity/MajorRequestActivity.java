@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.view.View;
 
 import com.example.firstapplication.R;
+import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
-import com.example.firstapplication.contract.LoginContract;
 
 /**
  * @Author: gl
@@ -16,6 +16,11 @@ public class MajorRequestActivity extends SimpleBaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_major_request;
+    }
+
+    @Override
+    protected IPresenter bindPresenter() {
+        return null;
     }
 
     public void startRequest(View view) {

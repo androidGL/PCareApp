@@ -1,6 +1,7 @@
 package com.example.firstapplication.activity;
 
 import com.example.firstapplication.R;
+import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
 
 /**
@@ -12,5 +13,10 @@ public class MajorPulseActivity extends SimpleBaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_major_pluse;
+    }
+
+    @Override
+    protected IPresenter bindPresenter() {
+        return null;
     }
 }

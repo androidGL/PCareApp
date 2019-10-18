@@ -3,22 +3,33 @@ package com.example.firstapplication.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.firstapplication.R;
 import com.example.firstapplication.base.SimpleBaseActivity;
+import com.example.firstapplication.contract.StartContract;
+import com.example.firstapplication.entity.UserInfo;
+import com.example.firstapplication.presenter.StartPresenter;
 
 import butterknife.BindView;
 
-public class StartActivity extends SimpleBaseActivity {
+public class StartActivity extends SimpleBaseActivity<StartPresenter> implements StartContract.View {
     @BindView(R.id.start_timer)
     TextView displayNum;
     private CountDownTimer timer;
+    private StartPresenter startPresenter;
 
     @Override
     public int getLayoutId() {
         return R.layout.layout_start;
+    }
+
+    @Override
+    protected StartPresenter bindPresenter() {
+        startPresenter = new StartPresenter(this);
+        return startPresenter;
     }
 
     @Override
@@ -38,6 +49,7 @@ public class StartActivity extends SimpleBaseActivity {
             }
         };
         timer.start();
+        startPresenter.getUserInfo("11");
     }
 
     public void startTreat(View view) {
@@ -61,5 +73,11 @@ public class StartActivity extends SimpleBaseActivity {
                 timer.cancel();
                 break;
         }
+    }
+
+    @Override
+    public void setUserInfo(UserInfo userInfo) {
+        Log.i("aaaaaaaaaaaaa",userInfo.toString());
+
     }
 }

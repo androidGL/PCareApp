@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.firstapplication.R;
 import com.example.firstapplication.adapter.QuestionSelectAdapter;
 import com.example.firstapplication.adapter.QuestionSpeakAdapter;
+import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
 import com.example.firstapplication.entity.MsgEntity;
 import com.example.firstapplication.entity.QuestionEnity;
@@ -47,6 +48,11 @@ public class QuestionActivity extends SimpleBaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_request_select;
+    }
+
+    @Override
+    protected IPresenter bindPresenter() {
+        return null;
     }
 
     @Override

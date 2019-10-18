@@ -7,12 +7,11 @@ import java.lang.ref.WeakReference;
  * @date 2019/10/9
  * Description:连接Model和View层的桥梁
  */
-public abstract class BasePresenter<V extends BaseActivity,M extends BaseModel,CONTRACT>  {
-    protected M m;
-    private WeakReference<V> vWeakReference;
+public abstract class BasePresenter<V extends IView> implements IPresenter  {
+    protected WeakReference<V> mWeakActivity;
 
-    public BasePresenter(){
-        m = getModel();
+    public BasePresenter(V view){
+        attachView(view);
     }
 
     /**
@@ -20,31 +19,30 @@ public abstract class BasePresenter<V extends BaseActivity,M extends BaseModel,C
      * @param v
      */
     public void attachView(V v){
-        vWeakReference = new WeakReference<>(v);
+        mWeakActivity = new WeakReference<V>(v);
     }
 
     /**
      * 解绑view
      */
     public void detachView(){
-        if(null != vWeakReference){
-            vWeakReference.clear();
-            vWeakReference = null;
+        if(null != mWeakActivity){
+            mWeakActivity.clear();
+            mWeakActivity = null;
             System.gc();
         }
     }
 
     //获取View
     public V getView(){
-        if(null != vWeakReference){
-            return vWeakReference.get();
+        if(null != mWeakActivity){
+            return mWeakActivity.get();
         }
         return  null;
     }
 
-    //获取子类具体契约（Model层和View层协商的共同业务）
-    public abstract CONTRACT getContract();
-
-    protected abstract M getModel();
+    protected boolean isViewAttach(){
+        return null != mWeakActivity && null != mWeakActivity.get();
+    }
 
 }

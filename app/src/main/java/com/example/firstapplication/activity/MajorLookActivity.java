@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 
 import com.example.firstapplication.R;
 import com.example.firstapplication.base.AppApplication;
+import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
 import com.pcare.threadpool.PoolThread;
 import com.pcare.threadpool.deliver.AndroidDeliver;
@@ -40,6 +41,11 @@ public class MajorLookActivity extends SimpleBaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_major_look;
+    }
+
+    @Override
+    protected IPresenter bindPresenter() {
+        return null;
     }
 
     @Override
