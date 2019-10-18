@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.firstapplication"
-        minSdkVersion 24
-        targetSdkVersion 29
+        minSdkVersion 23
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -18,9 +18,8 @@ android {
     }
     compileOptions {
 
-        sourceCompatibility JavaVersion.VERSION_1_8
-
         targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
 
     }
 }
@@ -40,7 +39,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-    compile project(path: ':threadpool')
+    implementation project(path: ':threadpool')
 //    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
 
 }

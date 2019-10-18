@@ -24,7 +24,7 @@ public class StartActivity extends SimpleBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        timer=new CountDownTimer(5*1000,1000) {
+        timer=new CountDownTimer(10*1000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 displayNum.setText(String.valueOf((int)millisUntilFinished/1000)+"s后开始为您全面预诊");
@@ -46,15 +46,19 @@ public class StartActivity extends SimpleBaseActivity {
         switch (view.getId()){
             case R.id.start_look:
                 startActivity(new Intent(StartActivity.this,MajorLookActivity.class));
+                timer.cancel();
                 break;
             case R.id.start_listener:
                 startActivity(new Intent(StartActivity.this,MajorListenerActivity.class));
+                timer.cancel();
                 break;
             case R.id.start_request:
                 startActivity(new Intent(StartActivity.this,MajorRequestActivity.class));
+                timer.cancel();
                 break;
             case R.id.start_pulse:
                 startActivity(new Intent(StartActivity.this,MajorPulseActivity.class));
+                timer.cancel();
                 break;
         }
     }

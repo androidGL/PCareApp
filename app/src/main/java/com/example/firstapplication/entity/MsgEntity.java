@@ -1,8 +1,8 @@
 package com.example.firstapplication.entity;
 
 public class MsgEntity {
-    public static final int SEND_MSG = 1;//发送方
-    public static final int RECV_MSG = 2;//接收方
+    public static final int SEND_MSG = 1;//我
+    public static final int RECV_MSG = 2;//机器人
     private String content;
     private int type;
 

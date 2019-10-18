@@ -54,9 +54,9 @@ public class MajorLookActivity extends SimpleBaseActivity {
                         containerView.setImageDrawable(getDrawable(R.mipmap.tougue));
                         break;
                     case TIP_TOUGUE:
-                        tip.setText(getString(R.string.look_tip_next));
                         Toast.makeText(MajorLookActivity.this, getString(R.string.look_tip_next), Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MajorLookActivity.this,MajorListenerActivity.class));
+                        finish();
                         break;
                 }
             }
@@ -67,7 +67,7 @@ public class MajorLookActivity extends SimpleBaseActivity {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -84,7 +84,7 @@ public class MajorLookActivity extends SimpleBaseActivity {
                     @Override
                     public void run() {
                         try {
-                            Thread.sleep(6000);
+                            Thread.sleep(10000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

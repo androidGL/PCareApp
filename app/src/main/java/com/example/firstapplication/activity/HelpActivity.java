@@ -5,12 +5,12 @@ import com.example.firstapplication.base.SimpleBaseActivity;
 
 /**
  * @Author: gl
- * @CreateDate: 2019/10/16
+ * @CreateDate: 2019/10/18
  * @Description:
  */
-public class MajorPulseActivity extends SimpleBaseActivity {
+public class HelpActivity extends SimpleBaseActivity {
     @Override
     public int getLayoutId() {
-        return R.layout.activity_major_pluse;
+        return R.layout.activity_help;
     }
 }

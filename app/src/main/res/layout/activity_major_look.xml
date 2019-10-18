@@ -8,13 +8,21 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@color/MAIN_COLOR"
-        android:text="@string/listener"
+        android:background="@color/main_color"
+        android:text="@string/look"
         android:textSize="@dimen/title_size"
         android:gravity="center"
         android:textColor="@color/title_text"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/title_text"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/look_tip"
+        />
 
     <TextView
         android:id="@+id/look_tip"
@@ -22,30 +30,43 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/tip_look"
-        android:textSize="20sp"
-
-        android:textColor="@color/TEXT_COLOR"
+        android:textSize="@dimen/main_text_size"
+        android:textColor="@color/text_color"
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintLeft_toLeftOf="parent"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
         app:layout_constraintRight_toRightOf="parent"/>
-    <ImageView
-        android:id="@+id/look_container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/face"
-        android:paddingTop="80dp"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/title_text"
         app:layout_constraintTop_toBottomOf="@id/look_tip"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/look_container"
+        />
+    <ImageView
+        android:id="@+id/look_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_marginTop="1px"
+        android:src="@mipmap/face"
+        android:paddingTop="80dp"
+        android:background="@color/white"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/look_tip"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/help"
         android:paddingRight="10dp"
+        android:onClick="startHelpActivity"
         app:layout_constraintTop_toTopOf="@id/title"
         app:layout_constraintBottom_toBottomOf="@id/title"
         app:layout_constraintRight_toRightOf="parent"/>

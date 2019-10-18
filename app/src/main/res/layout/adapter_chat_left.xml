@@ -9,7 +9,7 @@
         android:textSize="30sp"
         android:gravity="center"
         android:layout_margin="5dp"
-        android:textColor="@color/TEXT_COLOR"
+        android:textColor="@color/text_color"
         android:background="@drawable/bkg_head_circle"/>
     <TextView
         android:id="@+id/chat_left_msg"
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:layout_marginLeft="5dp"
-        android:textColor="@color/TEXT_COLOR"
+        android:textColor="@color/text_color"
         android:text="aaaaaaa"/>
 
 </LinearLayout>

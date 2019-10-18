@@ -4,13 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firstapplication.R;
-import com.example.firstapplication.adapter.ChatAdapter;
+import com.example.firstapplication.adapter.QuestionSpeakAdapter;
 import com.example.firstapplication.entity.MsgEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class ChatActivity extends Activity {
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         recyclerView = findViewById(R.id.chat_recycleview);
@@ -40,7 +39,7 @@ public class ChatActivity extends Activity {
     }
 
     public void getAllMessage(){
-        ChatAdapter adapter = new ChatAdapter(this,chatList);
+        QuestionSpeakAdapter adapter = new QuestionSpeakAdapter(this,chatList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
