@@ -6,7 +6,6 @@
     <string name="listener">闻</string>
     <string name="request">问</string>
     <string name="pulse">切</string>
-    <string name="top">就诊号：123456 \n个人信息：王二小 / 23岁 / 男 \n科室：脑科 \n专家姓名：华佗</string>
     <string name="top2">\t\t\t\t\t欢迎来到PCare预诊系统，接下来我将为您进行预诊，以便专家可以更全面更准确的了解您的病症，您可点击下面任一项开始预诊，或者等待系统自动为您进行全方面预诊。</string>
     <string name="tip_look">请将脸部显示到轮廓中，感谢配合！</string>
     <string name="look_tip2">请您张嘴将舌头显示到下框中，感谢配合！</string>
@@ -15,15 +14,17 @@
     <string name="tip_receive">请您将身份证放于磁卡读取处</string>
     <string name="listener_heart">胸腔</string>
     <string name="listener_stomach">腹腔</string>
-    <string name="stomach_info">\t\t\t\t\t请您拿起听诊仪放到左图所示位置，保持均匀呼吸。期间我会问您一些问题，请您点击最下方按钮后如实回答。\n\n肠鸣音：正常 \n状态：无明显血管杂音及摩擦音</string>
+
 
 
     <string name="request_start_tip">\n\t\t\t\t\t您已完成听诊项目，接下来我会询问您一些病症相关问题，请您根据实际情况认真准确作答。\n \n\t\t\t\t\t您可通过以下任意一种方式作答。</string>
     <string name="request_type_select">触碰点击 \n\n我们会展示一些问题和选项，请您选择最符合您身体状况的选项</string>
     <string name="request_type_speak">语音交互 \n\n我们询问您一些问题，请您准确描述出您的情况</string>
     <string name="request_bottom">请讲话...</string>
-    <string name="heart_info">\t\t\t\t\t请您拿起听诊仪放到左图所示位置，保持均匀呼吸。期间我会问您一些问题，请您点击最下方按钮后如实回答。\n\n心率状态：正常 \n每分钟心跳数：89</string>
-    <string name="pluse_info">\t\t\t\t\t请您拿起脉诊仪放到手腕处，保持均匀呼吸。期间我会问您一些问题，请您点击最下方按钮后如实回答。\n\n脉象状态：平稳 \n脉象类别：实脉</string>
+    <string name="listener_tip">\t\t\t\t\t请您拿起听诊仪放到左图所示位置，保持均匀呼吸。期间我会问您一些问题，请您点击最下方按钮后如实回答。</string>
+    <string name="heart_info">检查项目：胸腔听诊 \n心率状态：正常 \n每分钟心跳数：89</string>
+    <string name="stomach_info">检查项目：腹腔听诊 \n肠鸣音：正常 \n状态：无明显血管杂音及摩擦音</string>
+    <string name="pluse_info">检查项目：脉象 \n脉象状态：平稳 \n脉象类别：实脉</string>
     <string name="people_info">个人信息</string>
     <string name="question_finish">确认</string>
 

@@ -47,12 +47,12 @@
                 android:text="@string/people_info" />
         </LinearLayout>
         <TextView
+            android:id="@+id/user_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_color"
             android:textSize="@dimen/main_text_size"
-            android:layout_marginLeft="10dp"
-            android:text="@string/top" />
+            android:layout_marginLeft="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

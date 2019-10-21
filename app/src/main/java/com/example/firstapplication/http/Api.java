@@ -2,8 +2,13 @@ package com.example.firstapplication.http;
 
 import com.example.firstapplication.resultBean.UserInfo;
 
+import java.util.Observable;
+
 import retrofit2.Call;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
  * @author gelan
@@ -12,6 +17,11 @@ import retrofit2.http.GET;
  */
 
 public interface Api {
-    @GET("")
-    Call<UserInfo> getUser();//如果想直接获得Response Body的内容，可以定义网络请求返回值为Call<ResponseBody>
+//    @GET("appversion-getAppVersion")
+//    Observable<UserInfo> getAppVersion(@Query("currentVersion")String currentVersion,
+//                                     @Query("type")String type);
+//    @FormUrlEncoded
+//    @POST("appversion-getAppVersion")
+//    Observable<UserInfo> getAppVersion(@Query("currentVersion")String currentVersion,
+//                                     @Query("type")String type);
 }

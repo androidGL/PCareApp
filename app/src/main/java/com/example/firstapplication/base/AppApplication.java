@@ -39,28 +39,11 @@ public class AppApplication extends Application {
 
     }
 
-    private ThreadCallback threadCallback = new ThreadCallback() {
-        @Override
-        public void onError(String name, Throwable t) {
-            Log.e(TAG, "LogCallback"+"------onError"+"-----"+name+"----"+Thread.currentThread()+"----"+t.getMessage());
-        }
-
-        @Override
-        public void onCompleted(String name) {
-            Log.e(TAG, "LogCallback"+"------onCompleted"+"-----"+name+"----"+Thread.currentThread());
-        }
-
-        @Override
-        public void onStart(String name) {
-            Log.e(TAG, "LogCallback"+"------onStart"+"-----"+name+"----"+Thread.currentThread());
-        }
-    };
     private void initThreadPool() {
         // 创建一个独立的实例进行使用
         executor = PoolThread.ThreadBuilder
                 .createFixed(5)
                 .setPriority(Thread.MAX_PRIORITY)
-                .setCallback(threadCallback)
                 .build();
     }
     /**
@@ -72,7 +55,6 @@ public class AppApplication extends Application {
             executor = PoolThread.ThreadBuilder
                     .createFixed(5)
                     .setPriority(Thread.MAX_PRIORITY)
-                    .setCallback(threadCallback)
                     .build();
         }
         return executor;

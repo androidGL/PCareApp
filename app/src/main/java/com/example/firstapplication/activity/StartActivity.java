@@ -18,7 +18,10 @@ import butterknife.BindView;
 public class StartActivity extends SimpleBaseActivity<StartPresenter> implements StartContract.View {
     @BindView(R.id.start_timer)
     TextView displayNum;
-    private CountDownTimer timer;
+
+    @BindView(R.id.user_info)
+    TextView userInfoView;
+
     private StartPresenter startPresenter;
 
     @Override
@@ -28,56 +31,59 @@ public class StartActivity extends SimpleBaseActivity<StartPresenter> implements
 
     @Override
     protected StartPresenter bindPresenter() {
-        startPresenter = new StartPresenter(this);
+        startPresenter = new StartPresenter((StartContract.View) getSelfActivity());
         return startPresenter;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        timer=new CountDownTimer(10*1000,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                displayNum.setText(String.valueOf((int)millisUntilFinished/1000)+"s后开始为您全面预诊");
-            }
 
-            @Override
-            public void onFinish() {
-                startActivity(new Intent(StartActivity.this,MajorLookActivity.class));
-//                displayNum.setVisibility(View.GONE);
-                timer.cancel();
-            }
-        };
-        timer.start();
+        //11表示时身份证ID
         startPresenter.getUserInfo("11");
+        startPresenter.startCountDown();
     }
 
     public void startTreat(View view) {
-        timer.cancel();
         displayNum.setVisibility(View.GONE);
+        startPresenter.finishCountDown();
         switch (view.getId()){
             case R.id.start_look:
                 startActivity(new Intent(StartActivity.this,MajorLookActivity.class));
-                timer.cancel();
                 break;
             case R.id.start_listener:
                 startActivity(new Intent(StartActivity.this,MajorListenerActivity.class));
-                timer.cancel();
                 break;
             case R.id.start_request:
                 startActivity(new Intent(StartActivity.this,MajorRequestActivity.class));
-                timer.cancel();
                 break;
             case R.id.start_pulse:
                 startActivity(new Intent(StartActivity.this,MajorPulseActivity.class));
-                timer.cancel();
                 break;
         }
     }
 
     @Override
     public void setUserInfo(UserInfo userInfo) {
-        Log.i("aaaaaaaaaaaaa",userInfo.toString());
+        userInfoView.setText("就诊号："+userInfo.getId()
+                +"\n个人信息："+userInfo.getName()+"/"+userInfo.getAge()+"岁/"+userInfo.getSex()
+        +"\n科室："+userInfo.getType()
+        +"\n专家姓名："+userInfo.getDoctorName());
 
     }
+
+    @Override
+    public void setCountDown(String num) {
+        displayNum.setText(num);
+    }
+
+    @Override
+    public void startOtherActivity(boolean isAuto) {
+        startPresenter.finishCountDown();
+        displayNum.setVisibility(View.GONE);
+        if(isAuto){
+            startActivity(new Intent(StartActivity.this,MajorLookActivity.class));
+        }
+    }
+
 }

@@ -9,19 +9,11 @@ import com.example.firstapplication.entity.UserInfo;
  * @Description:
  */
 public class StartModel implements StartContract.Model {
+
     @Override
     public UserInfo getUserInfo(String id) {
-        return new UserInfo("12342","王二小",23,"脑科","华佗");
+        return new UserInfo("1234299","王二小",23,"女","脑科","华佗");
 
     }
 
-    @Override
-    public void startCountDown() {
-
-    }
-
-    @Override
-    public void startOtherTask() {
-
-    }
 }

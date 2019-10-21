@@ -11,6 +11,16 @@ public class UserInfo {
     private String id;
     private String name;
     private int age;
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    private String sex;
     private String type;
     private String doctorName;
     private boolean isLook = false;
@@ -18,10 +28,11 @@ public class UserInfo {
     private boolean isRequest = false;
     private boolean isPulse = false;
 
-    public UserInfo(String id, String name, int age, String type, String doctorName) {
+    public UserInfo(String id, String name, int age, String sex, String type, String doctorName) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.sex = sex;
         this.type = type;
         this.doctorName = doctorName;
     }
@@ -56,6 +67,26 @@ public class UserInfo {
 
     public void setPulse(boolean pulse) {
         isPulse = pulse;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
     }
 
     @NonNull

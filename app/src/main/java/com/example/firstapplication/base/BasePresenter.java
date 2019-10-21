@@ -8,7 +8,7 @@ import java.lang.ref.WeakReference;
  * Description:连接Model和View层的桥梁
  */
 public abstract class BasePresenter<V extends IView> implements IPresenter  {
-    protected WeakReference<V> mWeakActivity;
+    private WeakReference<V> mWeakActivity;
 
     public BasePresenter(V view){
         attachView(view);
