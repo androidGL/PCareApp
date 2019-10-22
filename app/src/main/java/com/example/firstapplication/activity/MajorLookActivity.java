@@ -61,7 +61,8 @@ public class MajorLookActivity extends SimpleBaseActivity {
                         break;
                     case TIP_TOUGUE:
                         Toast.makeText(MajorLookActivity.this, getString(R.string.look_tip_next), Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(MajorLookActivity.this,MajorListenerActivity.class));
+                        globalUserInfo.setLook(true);
+                        toNextPage();
                         finish();
                         break;
                 }

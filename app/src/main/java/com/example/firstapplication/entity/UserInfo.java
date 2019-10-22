@@ -2,6 +2,8 @@ package com.example.firstapplication.entity;
 
 import androidx.annotation.NonNull;
 
+import com.example.firstapplication.utils.ConstantFile;
+
 /**
  * @Author: gl
  * @CreateDate: 2019/10/18
@@ -28,6 +30,9 @@ public class UserInfo {
     private boolean isRequest = false;
     private boolean isPulse = false;
 
+    public UserInfo(){
+
+    }
     public UserInfo(String id, String name, int age, String sex, String type, String doctorName) {
         this.id = id;
         this.name = name;
@@ -87,6 +92,10 @@ public class UserInfo {
 
     public String getDoctorName() {
         return doctorName;
+    }
+
+    public String getNextPage(){
+        return isLook() ? (isListener() ? (isRequest() ? (isPulse() ? ConstantFile.ALL :ConstantFile.PLUSE) :ConstantFile.REQUEST) : ConstantFile.LISTENER) :ConstantFile.LOOK;
     }
 
     @NonNull

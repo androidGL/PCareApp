@@ -26,11 +26,20 @@
         app:layout_constraintBottom_toBottomOf="@id/title"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/title" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/title_text"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/request_start_tip"
+        />
     <TextView
         android:id="@+id/request_start_tip"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:background="@color/text_bck_color"
+        android:layout_marginTop="1px"
         android:text="@string/request_start_tip"
         android:textSize="@dimen/main_text_size"
         android:padding="10dp"

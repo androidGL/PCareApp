@@ -14,10 +14,28 @@
         android:textSize="@dimen/title_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/title_text"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/next"
+        android:paddingRight="10dp"
+        android:onClick="toNextTask"
+        app:layout_constraintTop_toTopOf="@id/title"
+        app:layout_constraintBottom_toBottomOf="@id/title"
+        app:layout_constraintRight_toRightOf="parent"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/question_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="1px"
         android:background="@color/text_bck_color"
         android:padding="10dp"
         android:layout_marginBottom="@dimen/second_title_height"

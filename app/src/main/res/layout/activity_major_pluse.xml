@@ -25,14 +25,22 @@
         app:layout_constraintBottom_toBottomOf="@id/title"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/title" />
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/title_text"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pluse_tip"
+        />
     <ImageView
         android:id="@+id/pluse_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginTop="1px"
         android:src="@mipmap/pluse"
+        android:background="@color/text_bck_color"
         app:layout_constraintBottom_toTopOf="@+id/pluse_wave"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
@@ -42,9 +50,11 @@
         android:id="@+id/pluse_tip"
         android:layout_width="0dp"
         android:layout_height="500dp"
+        android:layout_marginTop="1px"
         android:gravity="center_vertical"
         android:text="@string/pluse_info"
         android:textColor="@color/text_color"
+        android:background="@color/text_bck_color"
         android:textSize="@dimen/title_size"
         android:paddingLeft="10dp"
         app:layout_constraintWidth_percent="0.6"

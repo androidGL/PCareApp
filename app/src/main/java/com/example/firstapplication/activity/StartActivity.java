@@ -65,6 +65,7 @@ public class StartActivity extends SimpleBaseActivity<StartPresenter> implements
 
     @Override
     public void setUserInfo(UserInfo userInfo) {
+        globalUserInfo = userInfo;
         userInfoView.setText("就诊号："+userInfo.getId()
                 +"\n个人信息："+userInfo.getName()+"/"+userInfo.getAge()+"岁/"+userInfo.getSex()
         +"\n科室："+userInfo.getType()
@@ -82,7 +83,8 @@ public class StartActivity extends SimpleBaseActivity<StartPresenter> implements
         startPresenter.finishCountDown();
         displayNum.setVisibility(View.GONE);
         if(isAuto){
-            startActivity(new Intent(StartActivity.this,MajorLookActivity.class));
+            toNextPage();
+//            startActivity(new Intent(StartActivity.this,MajorLookActivity.class));
         }
     }
 

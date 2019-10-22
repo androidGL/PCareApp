@@ -60,13 +60,11 @@ public class MajorListenerActivity extends SimpleBaseActivity<MajorListenerPrese
 
     @Override
     public void setHeartData(String data) {
-        Log.i("aaaaaaaaaaaa", data);
         listenerResult.setText(getString(R.string.heart_info));
     }
 
     @Override
     public void setStomachData(String data) {
-        Log.i("aaaaaaaaaaaa", data);
         listenerResult.setText(getString(R.string.stomach_info));
 
     }
@@ -94,7 +92,8 @@ public class MajorListenerActivity extends SimpleBaseActivity<MajorListenerPrese
     @Override
     public void onStomachFinish() {
         Toast.makeText(MajorListenerActivity.this, getString(R.string.listener_tip_next), Toast.LENGTH_LONG).show();
-        startActivity(new Intent(MajorListenerActivity.this, MajorRequestActivity.class));
+        globalUserInfo.setListener(true);
+        toNextPage();
         finish();
     }
 }

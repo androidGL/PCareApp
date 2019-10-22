@@ -118,6 +118,8 @@ public class QuestionActivity extends SimpleBaseActivity {
     }
 
     public void toNextTask(View view) {
-        startActivity(new Intent(this,MajorPulseActivity.class));
+        globalUserInfo.setRequest(true);
+        toNextPage();
+        finish();
     }
 }
