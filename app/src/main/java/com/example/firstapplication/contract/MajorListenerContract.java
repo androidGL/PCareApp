@@ -26,6 +26,9 @@ public interface MajorListenerContract {
         void onHeartFinish();
         void onStomachFinish();
 
+        void showWaveData();
+        void showWaveLine(float line);
+
     }
     interface Presenter{
         void setHeartData(String data);
