@@ -1,10 +1,12 @@
 package com.example.firstapplication.activity;
 
 import android.content.Intent;
+import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
+import android.view.TextureView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +18,9 @@ import com.example.firstapplication.R;
 import com.example.firstapplication.base.AppApplication;
 import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
+import com.example.firstapplication.contract.MajorLookContarct;
+import com.example.firstapplication.presenter.MajorListenerPresenter;
+import com.example.firstapplication.presenter.MajorLookPresenter;
 import com.pcare.threadpool.PoolThread;
 import com.pcare.threadpool.deliver.AndroidDeliver;
 
@@ -29,14 +34,16 @@ import butterknife.BindView;
  * @CreateDate: 2019/10/16
  * @Description:
  */
-public class MajorLookActivity extends SimpleBaseActivity {
+public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> implements MajorLookContarct.View {
 
-    private final int TIP_FACE = 0;
-    private final int TIP_TOUGUE = 1;
+
     @BindView(R.id.look_tip)
     TextView tip;
+
     @BindView(R.id.look_container)
-    ImageView containerView;
+    TextureView textureView;
+
+    private MajorLookPresenter presenter;
 
     @Override
     public int getLayoutId() {
@@ -44,62 +51,59 @@ public class MajorLookActivity extends SimpleBaseActivity {
     }
 
     @Override
-    protected IPresenter bindPresenter() {
-        return null;
+    protected MajorLookPresenter bindPresenter() {
+        presenter = new MajorLookPresenter((MajorLookActivity) getSelfActivity());
+        return presenter;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Handler handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-                    case TIP_FACE:
-                        tip.setText(getString(R.string.look_tip2));
-                        containerView.setImageDrawable(getDrawable(R.mipmap.tougue));
-                        break;
-                    case TIP_TOUGUE:
-                        Toast.makeText(MajorLookActivity.this, getString(R.string.look_tip_next), Toast.LENGTH_LONG).show();
-                        globalUserInfo.setLook(true);
-                        toNextPage();
-                        finish();
-                        break;
-                }
-            }
-        };
-        AppApplication.getInstance().getExecutor()
-                .setName("look任务-面部")
-                .setDeliver(new AndroidDeliver()).execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                Message message = new Message();
-                message.what = 0;
-                handler.sendMessage(message);
-            }
-        });
-
-        AppApplication.getInstance().getExecutor()
-                .setName("look任务-舌部")
-                .setDeliver(new AndroidDeliver())
-                .execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Thread.sleep(10000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        Message message = new Message();
-                        message.what = 1;
-                        handler.sendMessage(message);
-                    }
-                });
+        startCamera();
     }
 
+    @Override
+    public void startCamera() {
+        presenter.startCameraThread();
+        if(!textureView.isAvailable()){
+            textureView.setSurfaceTextureListener(presenter.getTextureListener());
+        }else {
+            presenter.startPreview();
+        }
+    }
+
+    @Override
+    public SurfaceTexture getSurfaceTexture(){
+        SurfaceTexture surfaceTexture = textureView.getSurfaceTexture();
+        return surfaceTexture;
+    }
+
+    @Override
+    public void startFace() {
+        presenter.startFace();
+    }
+
+    @Override
+    public void finishFace() {
+        tip.setText(getString(R.string.look_tip2));
+    }
+
+    @Override
+    public void startTougue() {
+        presenter.startTougue();
+    }
+
+    @Override
+    public void finishTougue() {
+        Toast.makeText(MajorLookActivity.this, getString(R.string.look_tip_next), Toast.LENGTH_LONG).show();
+        globalUserInfo.setLook(true);
+        toNextPage();
+        finish();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        presenter.closeSession();
+    }
 }

@@ -72,7 +72,7 @@ public class MajorListenerActivity extends SimpleBaseActivity<MajorListenerPrese
     @Override
     public void startHeart() {
         presenter.startHeart();
-        listenerResult.setText("检查项目：胸腔听诊 \n心率状态：检测中 \n每分钟心跳数：检测中");
+        listenerResult.setText("检查项目：胸腔听诊 \n心率状态：检测中... \n每分钟心跳数：检测中...");
 
     }
 
@@ -80,7 +80,7 @@ public class MajorListenerActivity extends SimpleBaseActivity<MajorListenerPrese
     @Override
     public void startStomach() {
         pluseImage.setImageDrawable(getResources().getDrawable(R.mipmap.stomach));
-        listenerResult.setText("检查项目：腹腔听诊 \n肠鸣音：检测中 \n状态：检测中");
+        listenerResult.setText("检查项目：腹腔听诊 \n肠鸣音：检测中... \n状态：检测中...");
         presenter.startStomach();
     }
 

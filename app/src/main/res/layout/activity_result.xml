@@ -21,7 +21,6 @@
         android:background="@color/title_text"
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/feature_title"
         />
     <LinearLayout
     android:id="@+id/feature_title"

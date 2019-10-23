@@ -43,23 +43,30 @@
         android:background="@color/title_text"
         app:layout_constraintTop_toBottomOf="@id/look_tip"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/look_container"
         />
-    <ImageView
+
+    <TextureView
         android:id="@+id/look_container"
         android:layout_width="match_parent"
+        android:layout_marginTop="1dp"
         android:layout_height="0dp"
-        app:layout_constraintVertical_weight="1"
-        android:layout_marginTop="1px"
-        android:src="@mipmap/face1"
-        android:paddingTop="80dp"
-        android:background="@color/white"
-        android:scaleType="centerCrop"
-        android:padding="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         app:layout_constraintTop_toBottomOf="@id/look_tip"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:src="@mipmap/face1"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:layout_constraintTop_toBottomOf="@id/look_tip"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <ImageView
         android:id="@+id/imageview"

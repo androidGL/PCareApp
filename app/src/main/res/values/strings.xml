@@ -8,8 +8,8 @@
     <string name="pulse">切</string>
     <string name="all">预诊结果</string>
     <string name="top2">\t\t\t\t\t欢迎来到PCare预诊系统，接下来我将为您进行预诊，以便专家可以更全面更准确的了解您的病症，您可点击下面任一项开始预诊，或者等待系统自动为您进行全方面预诊。</string>
-    <string name="tip_look">将要采集您的面容，来分析身体状况。\n 请将脸部显示到轮廓中，感谢配合！</string>
-    <string name="look_tip2">接下来会根据您的舌苔来分析身体状况。\n 请您张嘴将舌头显示到下框中，感谢配合！</string>
+    <string name="tip_look">望面相\n将要采集您的面容，来分析身体状况。\n 请您将脸部显示到轮廓中，感谢配合！</string>
+    <string name="look_tip2">望舌苔\n接下来会根据您的舌苔来分析身体状况。\n 请您张嘴将舌头显示到下框中，感谢配合！</string>
     <string name="look_tip_next">您已完成面部采集</string>
     <string name="listener_tip_next">您已完成听诊项目</string>
     <string name="tip_receive">请您将身份证放于磁卡读取处</string>
@@ -20,7 +20,7 @@
 
     <string name="request_start_tip">\n\t\t\t\t\t接下来我会询问您一些病史以及现在的病症等相关问题，答案的准确性和真实性很重要，请您根据实际情况认真作答。\n \n\t\t\t\t\t您可通过以下任意一种方式作答。</string>
     <string name="request_type_select">触碰点击 \n\n我们会展示一些问题和选项，请您选择最符合您身体状况的选项</string>
-    <string name="request_type_speak">语音交互 \n\n我们询问您一些问题，请您准确描述出re您的情况</string>
+    <string name="request_type_speak">语音交互 \n\n我们询问您一些问题，请您准确描述出您的情况</string>
     <string name="request_bottom">请讲话...</string>
     <string name="listener_tip">\t\t\t\t\t请您拿起听诊仪放到左图所示位置，保持均匀呼吸。期间我会问您一些问题，请您点击最下方按钮后如实回答。</string>
     <string name="heart_info">检查项目：胸腔听诊 \n心率状态：正常 \n每分钟心跳数：89</string>
