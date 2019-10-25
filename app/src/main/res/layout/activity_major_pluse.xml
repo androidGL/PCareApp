@@ -41,7 +41,7 @@
         android:layout_marginTop="1px"
         android:src="@mipmap/pluse"
         android:background="@color/text_bck_color"
-        app:layout_constraintBottom_toTopOf="@+id/pluse_wave"
+        app:layout_constraintBottom_toTopOf="@id/pluse_wave"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintWidth_percent="0.4" />
@@ -61,12 +61,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/pluse_image"
         app:layout_constraintTop_toBottomOf="@id/title" />
-    <ImageView
+    <com.example.firstapplication.view.WaveShowView
         android:id="@+id/pluse_wave"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:src="@mipmap/wave"
-        android:scaleType="fitXY"
         app:layout_constraintWidth_percent="1"
         app:layout_constraintVertical_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"

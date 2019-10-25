@@ -1,28 +1,15 @@
 package com.example.firstapplication.activity;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
-import android.view.Surface;
-import android.view.SurfaceView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.firstapplication.R;
-import com.example.firstapplication.base.AppApplication;
-import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
 import com.example.firstapplication.contract.MajorListenerContract;
 import com.example.firstapplication.presenter.MajorListenerPresenter;
 import com.example.firstapplication.view.WaveShowView;
-import com.pcare.threadpool.PoolThread;
-import com.pcare.threadpool.callback.ThreadCallback;
-import com.pcare.threadpool.deliver.AndroidDeliver;
 
 import butterknife.BindView;
 
@@ -84,6 +71,7 @@ public class MajorListenerActivity extends SimpleBaseActivity<MajorListenerPrese
 
     @Override
     public void startStomach() {
+        waveShowView.resetCanavas();
         pluseImage.setImageDrawable(getResources().getDrawable(R.mipmap.stomach));
         listenerResult.setText("检查项目：腹腔听诊 \n肠鸣音：检测中... \n状态：检测中...");
         presenter.startStomach();
@@ -102,22 +90,11 @@ public class MajorListenerActivity extends SimpleBaseActivity<MajorListenerPrese
         finish();
     }
 
-    @Override
-    public void showWaveData() {
-//        waveShowView.setData(presenter.getHealth_data1(),waveShowView.SHOW_MODEL_DYNAMIC_SCROLL);
-        waveShowView.setData(null,waveShowView.SHOW_MODEL_DYNAMIC_REFRESH);
-    }
 
     @Override
-    public void showWaveLine(float line) {
-        waveShowView.showLine(line);
+    public void showWaveLine(float data) {
+        waveShowView.showLine(data);
 
     }
 
-//    @Override
-//    protected void onPause() {
-//        if(null != presenter)
-//            presenter.detachView();
-//        super.onPause();
-//    }
 }

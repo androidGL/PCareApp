@@ -17,6 +17,8 @@ public interface MajorPulseContract {
         void startPulse();
         void finishPulse(String info);
         void toOtherPage();
+        void setWaveData();
+        void showWaveLine(float line);
     }
     interface Presenter {
         void startPulse();

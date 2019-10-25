@@ -124,23 +124,22 @@ public class MajorListenerPresenter extends BasePresenter<MajorListenerContract.
                 handler.sendMessage(message);
             }
         });
-//        model.startHeart();
+        model.startHeart();
     }
 
     private void showWaveData() {
         dataList = getHealth_data1().split(",");
-        getView().showWaveData();
-        timer = new Timer(){};
+        timer = new Timer();
         timerTask = new TimerTask() {
             @Override
             public void run() {
                 if(index >= dataList.length){
                     index = 0;
                 }
-                if(TextUtils.isEmpty(dataList[index]))
+                if(TextUtils.isEmpty(dataList[index])) {
+                    index++;
                     return;
-                if(!isViewAttach())
-                    return;
+                }
                 getView().showWaveLine(Float.parseFloat(dataList[index]));
                 index++;
             }
@@ -150,8 +149,13 @@ public class MajorListenerPresenter extends BasePresenter<MajorListenerContract.
 
     @Override
     public void startStomach() {
-//        timer.cancel();
-//        showWaveData();
+        if(null != timer) {
+            timer.cancel();
+            timerTask.cancel();
+            timer=null;
+            timerTask = null;
+        }
+        showWaveData();
         AppApplication.getInstance().getExecutor()
                 .setName("listener任务-腹腔")
                 .setDeliver(new AndroidDeliver()).execute(new Runnable() {
@@ -167,13 +171,24 @@ public class MajorListenerPresenter extends BasePresenter<MajorListenerContract.
                 handler.sendMessage(message);
             }
         });
-//        model.startStomach();
+        model.startStomach();
     }
 
 
     public String getHealth_data1() {
         health_data1+=(health_data1+health_data1+health_data1+health_data1);
         return health_data1;
+    }
+
+    @Override
+    public void detachView() {
+        if(null != timer) {
+            timer.cancel();
+            timerTask.cancel();
+            timer = null;
+            timerTask = null;
+        }
+        super.detachView();
     }
 
     private String health_data1 = "0.101253886148333549,0.0" +

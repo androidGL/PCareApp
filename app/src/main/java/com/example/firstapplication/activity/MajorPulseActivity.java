@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.firstapplication.R;
-import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
-import com.example.firstapplication.contract.MajorListenerContract;
 import com.example.firstapplication.contract.MajorPulseContract;
-import com.example.firstapplication.presenter.MajorListenerPresenter;
 import com.example.firstapplication.presenter.MajorPulsePresenter;
+import com.example.firstapplication.view.WaveShowView;
 
 import butterknife.BindView;
 
@@ -23,6 +21,9 @@ public class MajorPulseActivity extends SimpleBaseActivity<MajorPulsePresenter> 
 
     @BindView(R.id.pluse_tip)
     TextView pulseInfoText;
+
+    @BindView(R.id.pluse_wave)
+    WaveShowView waveShowView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +58,19 @@ public class MajorPulseActivity extends SimpleBaseActivity<MajorPulsePresenter> 
     @Override
     public void toOtherPage() {
         globalUserInfo.setPulse(true);
-        toNextPage();
-        finish();
+//        toNextPage();
+//        finish();
+
+    }
+    @Override
+    public void setWaveData() {
+//        waveShowView.setData(presenter.getHealth_data1());
+//        waveShowView.setData(null,waveShowView.SHOW_MODEL_DYNAMIC_REFRESH);
+    }
+
+    @Override
+    public void showWaveLine(float line) {
+        waveShowView.showLine(line);
 
     }
 }
