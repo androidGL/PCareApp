@@ -4,16 +4,19 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.firstapplication.R;
 import com.example.firstapplication.entity.QuestionEnity;
+import com.example.firstapplication.utils.TextToSpeechUtil;
 
 import java.util.List;
 
@@ -42,9 +45,9 @@ public class QuestionSelectAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         if(holder instanceof QuestionViewHolder) {
             QuestionEnity questionEnity = questionList.get(position);
             List<String> answerList = questionEnity.getAnswerList();
-            ((QuestionViewHolder) holder).question.setText(questionEnity.getQuestion());
+            ((QuestionViewHolder) holder).question.setText(position+1 + "，" + questionEnity.getQuestion());
             for (String item:answerList){
-                ((QuestionViewHolder) holder).answerList.addView(new QueationRadioButton(context,item));
+                ((QuestionViewHolder) holder).answerList.addView(new QueationRadioButton(context,item,position));
             }
         }
 
@@ -66,10 +69,20 @@ public class QuestionSelectAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
     private class QueationRadioButton extends AppCompatRadioButton {
 
-        public QueationRadioButton(Context context,String name) {
+        public QueationRadioButton(Context context,String name,int position) {
             super(context);
             setText(name);
             setTextColor(getResources().getColor(R.color.text_color));
+            setOnCheckedChangeListener(new OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if(position<getItemCount()-1 && !questionList.get(position+1).isSpeak()){
+                        TextToSpeechUtil.textToSpeak(context,questionList.get(position+1).getQuestion());
+                        questionList.get(position+1).setSpeak(true);
+                    }
+                }
+            });
         }
+
     }
 }

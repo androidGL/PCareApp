@@ -35,12 +35,13 @@
     <string name="result_careful">宜食甘温，忌生冷、油腻之食物。宜补养气血、健运脾胃之品，如红枣、阿胶、桂圆、枸杞、茯苓、莲子、当归、白木耳、糯米等。可选红枣莲子粥等。</string>
     <string name="getwell">祝您早日康复</string>
     <array name="list_question">
-        <item>1, 请问你眩晕多久了？</item>
-        <item>2, 你一般在什么情况下出现眩晕？</item>
-        <item>3, 请描述下眩晕发作时的感觉。</item>
-        <item>4, 请用0-5来描述你眩晕的程度。</item>
-        <item>5, 请描述下眩晕持续的时间。</item>
-        <item>6, 眩晕多久出现一次?</item>
+        <item>请问你眩晕多久了？</item>
+        <item>你一般在什么情况下出现眩晕？</item>
+        <item>请描述下眩晕发作时的感觉。</item>
+        <item>请用0-5来描述你眩晕的程度。</item>
+        <item>请描述下眩晕持续的时间。</item>
+        <item>眩晕多久出现一次?</item>
+        <item>父母或其他直系亲属有没有过眩晕</item>
     </array>
     <array name="list_answer">
         <item>1个月内，1~3个月，3~12月，1~3年，多余3年</item>
@@ -49,5 +50,7 @@
         <item>1轻微，2中度，3严重，4特别严重，5晕倒</item>
         <item>1分种内，1小时内，几个小时，更长时间</item>
         <item>每天，几天，几个月</item>
+        <item>有，无</item>
+
     </array>
 </resources>

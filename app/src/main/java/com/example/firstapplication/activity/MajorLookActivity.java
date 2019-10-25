@@ -1,31 +1,15 @@
 package com.example.firstapplication.activity;
 
-import android.content.Intent;
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.Message;
 import android.view.TextureView;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
 import com.example.firstapplication.R;
-import com.example.firstapplication.base.AppApplication;
-import com.example.firstapplication.base.IPresenter;
 import com.example.firstapplication.base.SimpleBaseActivity;
 import com.example.firstapplication.contract.MajorLookContarct;
-import com.example.firstapplication.presenter.MajorListenerPresenter;
 import com.example.firstapplication.presenter.MajorLookPresenter;
-import com.pcare.threadpool.PoolThread;
-import com.pcare.threadpool.deliver.AndroidDeliver;
-
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 
@@ -42,6 +26,7 @@ public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> im
 
     @BindView(R.id.look_container)
     TextureView textureView;
+//    private SurfaceTexture surfaceTexture;
 
     private MajorLookPresenter presenter;
 
@@ -74,8 +59,8 @@ public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> im
 
     @Override
     public SurfaceTexture getSurfaceTexture(){
-        SurfaceTexture surfaceTexture = textureView.getSurfaceTexture();
-        return surfaceTexture;
+//        surfaceTexture = textureView.getSurfaceTexture();
+        return textureView.getSurfaceTexture();
     }
 
     @Override

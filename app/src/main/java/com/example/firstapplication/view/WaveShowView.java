@@ -71,7 +71,7 @@ public class WaveShowView extends View {
 
         mWavePaint = new Paint();
         mWavePaint.setStyle(Paint.Style.STROKE);
-        mWavePaint.setColor(Color.RED);
+        mWavePaint.setColor(mWaveLineColor);
         mWavePaint.setStrokeWidth(WAVE_LINE_STROKE_WIDTH);
         mWavePaint.setAntiAlias(true);//抗锯齿效果
 

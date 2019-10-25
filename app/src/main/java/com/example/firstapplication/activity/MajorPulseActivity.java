@@ -14,7 +14,7 @@ import butterknife.BindView;
 /**
  * @Author: gl
  * @CreateDate: 2019/10/16
- * @Description:
+ * @Description: 脉诊页面
  */
 public class MajorPulseActivity extends SimpleBaseActivity<MajorPulsePresenter> implements MajorPulseContract.View {
     private MajorPulsePresenter presenter;
@@ -58,19 +58,14 @@ public class MajorPulseActivity extends SimpleBaseActivity<MajorPulsePresenter> 
     @Override
     public void toOtherPage() {
         globalUserInfo.setPulse(true);
-//        toNextPage();
-//        finish();
+        toNextPage();
+        finish();
 
-    }
-    @Override
-    public void setWaveData() {
-//        waveShowView.setData(presenter.getHealth_data1());
-//        waveShowView.setData(null,waveShowView.SHOW_MODEL_DYNAMIC_REFRESH);
     }
 
     @Override
-    public void showWaveLine(float line) {
-        waveShowView.showLine(line);
+    public void showWaveLine(float data) {
+        waveShowView.showLine(data);
 
     }
 }

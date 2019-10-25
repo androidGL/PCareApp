@@ -19,6 +19,8 @@ public class QuestionEnity {
     //是否单选
     private boolean isRadio;
 
+    private boolean isSpeak = false;
+
     public QuestionEnity(String question, List<String> answerList, boolean isRadio) {
         this.question = question;
         this.answerList = answerList;
@@ -52,4 +54,11 @@ public class QuestionEnity {
         this.resultList.add(item);
     }
 
+    public boolean isSpeak() {
+        return isSpeak;
+    }
+
+    public void setSpeak(boolean speak) {
+        isSpeak = speak;
+    }
 }
