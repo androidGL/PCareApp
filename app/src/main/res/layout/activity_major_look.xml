@@ -45,8 +45,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         />
 
-    <TextureView
-        android:id="@+id/look_container"
+    <RelativeLayout
+        android:id="@+id/look_container_layout"
         android:layout_width="match_parent"
         android:layout_marginTop="1dp"
         android:layout_height="0dp"
@@ -55,18 +55,25 @@
         app:layout_constraintTop_toBottomOf="@id/look_tip"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-    <ImageView
-        android:layout_width="500dp"
-        android:layout_height="500dp"
-        android:src="@mipmap/face1"
-        android:scaleType="fitXY"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        app:layout_constraintTop_toBottomOf="@id/look_tip"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextureView
+            android:id="@+id/look_container"
+            android:layout_width="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+        <ImageView
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            android:src="@mipmap/face1"
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+           />
+    </RelativeLayout>
+
 
     <ImageView
         android:id="@+id/imageview"

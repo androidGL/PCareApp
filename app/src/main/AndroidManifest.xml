@@ -4,9 +4,10 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
@@ -16,16 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.StartActivity"
-            android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activity.ChatActivity"
-            android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity
+            android:name=".activity.StartActivity"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
+        <activity
+            android:name=".activity.ChatActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name=".activity.MajorLookActivity" />
         <activity android:name=".activity.MajorListenerActivity" />
         <activity android:name=".activity.MajorRequestActivity" />
@@ -33,6 +30,14 @@
         <activity android:name=".activity.MajorPulseActivity" />
         <activity android:name=".activity.HelpActivity" />
         <activity android:name=".activity.ResultActivity" />
+        <activity android:name=".activity.VerifyFaceActivity" />
+        <activity android:name=".activity.IndexActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

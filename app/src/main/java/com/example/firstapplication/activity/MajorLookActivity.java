@@ -26,7 +26,6 @@ public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> im
 
     @BindView(R.id.look_container)
     TextureView textureView;
-//    private SurfaceTexture surfaceTexture;
 
     private MajorLookPresenter presenter;
 
@@ -59,7 +58,6 @@ public class MajorLookActivity extends SimpleBaseActivity<MajorLookPresenter> im
 
     @Override
     public SurfaceTexture getSurfaceTexture(){
-//        surfaceTexture = textureView.getSurfaceTexture();
         return textureView.getSurfaceTexture();
     }
 

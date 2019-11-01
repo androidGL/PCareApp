@@ -6,6 +6,8 @@
     <string name="listener">闻</string>
     <string name="request">问</string>
     <string name="pulse">切</string>
+    <string name="finish">（已完成）</string>
+    <string name="unfinish">（未完成）</string>
     <string name="all">预诊结果</string>
     <string name="top2">\t\t\t\t\t欢迎来到PCare预诊系统，接下来我将为您进行预诊，以便专家可以更全面更准确的了解您的病症，您可点击下面任一项开始预诊，或者等待系统自动为您进行全方面预诊。</string>
     <string name="tip_look">望面相\n将要采集您的面容，来分析身体状况。\n 请您将脸部显示到轮廓中，感谢配合！</string>
@@ -19,7 +21,7 @@
 
 
     <string name="request_start_tip">\n\t\t\t\t\t接下来我会询问您一些病史以及现在的病症等相关问题，答案的准确性和真实性很重要，请您根据实际情况认真作答。\n \n\t\t\t\t\t您可通过以下任意一种方式作答。</string>
-    <string name="request_type_select">触碰点击 \n\n我们会展示一些问题和选项，请您选择最符合您身体状况的选项</string>
+    <string name="request_type_select">触屏点击 \n\n我们会展示一些问题和选项，请您选择最符合您的选项</string>
     <string name="request_type_speak">语音交互 \n\n我们询问您一些问题，请您准确描述出您的情况</string>
     <string name="request_bottom">请讲话...</string>
     <string name="listener_tip">\t\t\t\t\t请您拿起听诊仪放到左图所示位置，保持均匀呼吸。期间我会问您一些问题，请您点击最下方按钮后如实回答。</string>
@@ -34,6 +36,7 @@
     <string name="result_advice">八珍汤加减。人参(或党参)、黄芪、当归、炒白术、茯苓、川芎、熟地黄、生白芍、肉桂、枸杞子、怀牛膝、炙甘草等。或具有同类功效的中成药（包括中药注射剂）。</string>
     <string name="result_careful">宜食甘温，忌生冷、油腻之食物。宜补养气血、健运脾胃之品，如红枣、阿胶、桂圆、枸杞、茯苓、莲子、当归、白木耳、糯米等。可选红枣莲子粥等。</string>
     <string name="getwell">祝您早日康复</string>
+    <string name="result_face">面相采集报告</string>
     <array name="list_question">
         <item>请问你眩晕多久了？</item>
         <item>你一般在什么情况下出现眩晕？</item>

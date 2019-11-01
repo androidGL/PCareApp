@@ -63,70 +63,146 @@
             android:text="@string/top2" />
     </LinearLayout>
 
-
-    <TextView
+    <LinearLayout
         android:id="@+id/start_look"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="@string/look"
-        android:textSize="@dimen/big_size"
-        android:textColor="@color/text_color"
-        android:textStyle="bold"
+        android:orientation="vertical"
         android:background="@color/start_look"
         android:onClick="startTreat"
         app:layout_constraintHeight_percent="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_text"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <TextView
+        app:layout_constraintWidth_percent="0.5" >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/start_look"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/look"
+            android:textSize="@dimen/start_textsize"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+          />
+        <TextView
+            android:id="@+id/look_finish_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unfinish"
+            android:textSize="@dimen/main_text_size"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/start_listener"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="@string/listener"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/big_size"
-        android:textStyle="bold"
+        android:orientation="vertical"
         android:background="@color/start_listen"
         android:onClick="startTreat"
         app:layout_constraintHeight_percent="0.3"
         app:layout_constraintLeft_toRightOf="@id/start_look"
         app:layout_constraintTop_toBottomOf="@id/top_text"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <TextView
+        app:layout_constraintWidth_percent="0.5">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/start_listener"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/listener"
+            android:textSize="@dimen/start_textsize"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/listener_finish_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unfinish"
+            android:textSize="@dimen/main_text_size"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/start_request"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="@string/request"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/big_size"
-        android:textStyle="bold"
+        android:orientation="vertical"
         android:background="@color/start_request"
         android:onClick="startTreat"
         app:layout_constraintHeight_percent="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/start_look"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <TextView
+        app:layout_constraintWidth_percent="0.5">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/start_request"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/request"
+            android:textSize="@dimen/start_textsize"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/request_finish_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unfinish"
+            android:textSize="@dimen/main_text_size"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/start_pulse"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="@string/pulse"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/big_size"
-        android:textStyle="bold"
+        android:orientation="vertical"
         android:background="@color/start_pulse"
         android:onClick="startTreat"
         app:layout_constraintHeight_percent="0.3"
         app:layout_constraintStart_toEndOf="@id/start_request"
         app:layout_constraintTop_toBottomOf="@id/start_listener"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.5" >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/start_pulse"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pulse"
+            android:textSize="@dimen/start_textsize"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/pulse_finish_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unfinish"
+            android:textSize="@dimen/main_text_size"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/start_timer"

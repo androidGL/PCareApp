@@ -15,4 +15,7 @@ public class ConstantFile {
     public static final String REQUEST = "REQUEST";//问
     public static final String PLUSE = "PLUSE";//切
     public static final String ALL = "ALL";//全部完成
+    public static final String FACEKEY = "lbeyVLeYaqCalCyL2Yhfyq8NyzxTiObJ";
+    public static final String FACESECRET = "55Uf_ewap2B-Tgr9hPEJK-GdwPjEDk_J";
+
 }

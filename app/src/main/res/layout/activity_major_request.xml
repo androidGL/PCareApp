@@ -46,34 +46,58 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
-    <TextView
+    <LinearLayout
         android:id="@+id/request_type_select"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/start_look"
-        android:text="@string/request_type_select"
         android:gravity="center"
-        android:padding="10dp"
+        android:orientation="vertical"
         android:onClick="startRequest"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/main_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/request_start_tip"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintWidth_percent="0.5"/>
-    <TextView
+        app:layout_constraintWidth_percent="0.5">
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@mipmap/request_click_type"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/request_type_select"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/main_text_size"
+            />
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/request_type_speak"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/start_listen"
-        android:text="@string/request_type_speak"
         android:gravity="center"
+        android:orientation="vertical"
         android:onClick="startRequest"
-        android:padding="10dp"
-        android:textColor="@color/text_color"
-        android:textSize="@dimen/main_text_size"
         app:layout_constraintStart_toEndOf="@id/request_type_select"
         app:layout_constraintTop_toBottomOf="@id/request_start_tip"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintWidth_percent="0.5"/>
+        app:layout_constraintWidth_percent="0.5">
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@mipmap/request_speak_type"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/request_type_speak"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/main_text_size"
+       />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,15 @@ public class StartActivity extends SimpleBaseActivity<StartPresenter> implements
     @BindView(R.id.user_info)
     TextView userInfoView;
 
+    @BindView(R.id.look_finish_text)
+    TextView lookFinish;
+    @BindView(R.id.listener_finish_text)
+    TextView listenerFinish;
+    @BindView(R.id.request_finish_text)
+    TextView requestFinish;
+    @BindView(R.id.pulse_finish_text)
+    TextView pulseFinish;
+
     private StartPresenter startPresenter;
 
     @Override
@@ -42,6 +51,19 @@ public class StartActivity extends SimpleBaseActivity<StartPresenter> implements
         //11表示时身份证ID
         startPresenter.getUserInfo("11");
         startPresenter.startCountDown();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(globalUserInfo.isLook())
+            lookFinish.setText(getResources().getString(R.string.finish));
+        if(globalUserInfo.isListener())
+            listenerFinish.setText(getResources().getString(R.string.finish));
+        if(globalUserInfo.isRequest())
+            requestFinish.setText(getResources().getString(R.string.finish));
+        if(globalUserInfo.isPulse())
+            pulseFinish.setText(getResources().getString(R.string.finish));
     }
 
     public void startTreat(View view) {

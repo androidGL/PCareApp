@@ -16,6 +16,7 @@
     <color name="unselect">#f5f5f5</color>
     <color name="select">#BDBDBD</color>
     <color name="red">#FF0000</color>
+    <color name="result_param_text_color">#8B5A00</color>
     <!--<color name="head_chat">#698B22</color>-->
 
 </resources>

@@ -29,10 +29,16 @@ public abstract class SimpleBaseActivity<P extends IPresenter> extends Activity 
         setContentView(getLayoutId());
         ButterKnife.bind(this);
         presenter = bindPresenter();
+        start();
     }
     public abstract int getLayoutId();
     // 绑定Presenter
     protected abstract P bindPresenter();
+
+    //开始了
+    public void start(){
+
+    }
 
 
     @Override
